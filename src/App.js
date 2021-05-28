@@ -6,6 +6,8 @@ import Course from './modules/course/course';
 import './common/styles/colors.scss';
 import './common/styles/typography.scss';
 import './common/styles/overall.scss';
+import './common/styles/animation.scss';
+
 import history from './common/components/Router/history';
 
 const App = () => {

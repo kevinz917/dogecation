@@ -1,8 +1,9 @@
 const pxForSpacerSize: Record<string, number> = {
   small: 8,
   medium: 12,
-  large: 16,
-  xlarge: 22,
+  large: 30,
+  xlarge: 40,
+  xxlarge: 60,
 };
 
 interface spacerOwnProps {

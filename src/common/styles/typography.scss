@@ -2,8 +2,8 @@
 @import "./colors.scss"; // headers
 
 .header1 {
-  font-size: 28px;
-  font-weight: medium;
+  font-size: 32px;
+  font-weight: 700;
   color: $grey000;
   margin-bottom: 6px;
 }
@@ -26,13 +26,15 @@
 .body1 {
   font-size: 14px;
   color: $grey000;
+  line-height: 150%;
 }
 
 .body2 {
-  font-size: 16px;
+  font-size: 17px;
   color: $grey000;
+  line-height: 150%;
 }
 
-.subtitle {
+.caption {
   color: $grey400;
 }

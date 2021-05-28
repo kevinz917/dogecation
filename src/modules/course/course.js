@@ -2,9 +2,13 @@ import './course.scss';
 import '../../common/styles/typography.scss';
 import { connect } from 'react-redux';
 import RenderIf from 'common/components/RenderIf/RenderIf';
+import WelcomePage from './welcomePage/WelcomePage';
+import Page2 from './Page2/Page2';
 
 const mapStateToProps = (state) => {
-  step: state.step;
+  return {
+    step: state.course.step,
+  };
 };
 
 const Course = (props) => {
@@ -12,12 +16,13 @@ const Course = (props) => {
 
   return (
     <div className="course-container">
-      <div className="left-container">
-        <RenderIf value={step == 1}>
-          <div className="header1">Welcome to Dogecation!</div>
-          <div className="subtitle">Learn more about NFTs</div>
-        </RenderIf>
-      </div>
+      <RenderIf value={step == 1}>
+        <WelcomePage />
+      </RenderIf>
+
+      <RenderIf value={step == 2}>
+        <Page2 />
+      </RenderIf>
     </div>
   );
 };
