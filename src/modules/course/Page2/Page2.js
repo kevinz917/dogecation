@@ -62,13 +62,7 @@ const Page2 = (props) => {
           <img src={Doge} className="doge-hero" />
         </div>
 
-        <hr />
-        <div>
-          <div className="header1">Your NFT Doge data</div>
-          <div className="body2">This data will be stored on IPFS</div>
-          <br />
-          <NFTDataDisplay />
-        </div>
+        <NFTDataDisplay />
       </div>
     </React.Fragment>
   );

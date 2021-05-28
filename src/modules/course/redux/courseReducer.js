@@ -7,12 +7,23 @@ const initialCourseState = {
     id: 12,
     name: '',
     description: '',
-    creationTime: new Date().getTime(),
+    dna: '',
   },
 };
 
+const createDNA = () => {
+  const numbers = '0123456789';
+  const dna = [];
+  for (let i = 0; i < 16; i++) {
+    dna.push(numbers.charAt(Math.floor(Math.random() * numbers.length)));
+  }
+  return dna.join('');
+};
+
+console.log(createDNA());
+
 export const courseReducer = produce((state, action) => {
-  const payload = action.payload;
+  const { payload } = action;
 
   switch (action.type) {
     case COURSE_ACTIONS.SET_STEP:
@@ -23,6 +34,11 @@ export const courseReducer = produce((state, action) => {
       copy[payload.field] = payload.value;
       state.nft = copy;
       break;
+    case COURSE_ACTIONS.SET_DNA:
+      let newDNA = createDNA();
+      state.nft.dna = newDNA;
+      break;
+
     default:
       break;
   }

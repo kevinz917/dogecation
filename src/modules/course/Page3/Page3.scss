@@ -1,0 +1,16 @@
+.dna-generator-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  input {
+    margin-right: 12px;
+  }
+}
+
+.redhat {
+  width: 150px;
+  height: auto;
+  position: absolute;
+  top: 50px;
+}
