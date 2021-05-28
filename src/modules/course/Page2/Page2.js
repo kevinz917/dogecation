@@ -1,35 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Input from 'common/components/Input/Input';
 import Nav from '../Nav/Nav';
 import Spacer from 'common/components/spacer/Spacer';
 import Doge from '../assets/doge.png';
+import NFTDataDisplay from '../NFTDataDisplay/NFTDataDisplay';
+import courseActions from '../redux/courseActionCreator';
 import './page2.scss';
+import { connect } from 'react-redux';
 
-const initialNftDatObject = {
-  id: 12,
-  name: '',
-  description: '',
-  creationTime: new Date().getTime(),
+const mapStateToProps = (state) => {
+  return {
+    nft: state.course.nft,
+  };
 };
 
-const Page2 = () => {
-  const [nftData, setNftData] = useState(initialNftDatObject);
+const mapDispatchToProps = {
+  nftDataChanged: (field, value) => courseActions.setNFTField(field, value),
+};
 
-  const nftDataOnChanged = (field, value) => {
-    let copy = Object.assign({}, nftData);
-    copy[field] = value;
-    setNftData(copy);
-  };
+const Page2 = (props) => {
+  const { nft, nftDataChanged } = props;
 
   return (
     <React.Fragment>
       <div className="left-container">
         <div className="header1">Build your own NFT</div>
-        <br />
+        <div className="body2">NFTs are described by data. Here, we will be customizing our NFT</div>
+        <Spacer size="xxlarge" />
+
         <div className="body2">First, give your NFT a name</div>
         <Input
-          onChange={(e) => nftDataOnChanged('name', e.target.value)}
-          value={nftData.name}
+          onChange={(e) => nftDataChanged('name', e.target.value)}
+          value={nft.name}
           placeholder="Enter Doge name"
         />
 
@@ -38,8 +40,8 @@ const Page2 = () => {
         <div className="body2">Give your Doge a description</div>
 
         <Input
-          onChange={(e) => nftDataOnChanged('description', e.target.value)}
-          value={nftData.description}
+          onChange={(e) => nftDataChanged('description', e.target.value)}
+          value={nft.description}
           placeholder="Enter Doge name"
         />
 
@@ -53,7 +55,7 @@ const Page2 = () => {
         </div>
 
         <Spacer size="xxlarge" />
-        <Nav />
+        <Nav nextStep="Next: Customize Doge" />
       </div>
       <div className="right-container">
         <div className="doge-container">
@@ -65,13 +67,11 @@ const Page2 = () => {
           <div className="header1">Your NFT Doge data</div>
           <div className="body2">This data will be stored on IPFS</div>
           <br />
-          <div className="body2">
-            <pre>{JSON.stringify(nftData, null, 2)}</pre>
-          </div>
+          <NFTDataDisplay />
         </div>
       </div>
     </React.Fragment>
   );
 };
 
-export default Page2;
+export default connect(mapStateToProps, mapDispatchToProps)(Page2);

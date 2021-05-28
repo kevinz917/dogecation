@@ -15,14 +15,16 @@ const mapDispatchToProps = {
 };
 
 const Nav = (props) => {
-  const { step, setStep } = props;
+  const { step, setStep, nextStep } = props;
 
   return (
     <div className="nav-container">
-      <Button onClick={() => setStep(step + 1)}>Next</Button>
+      <Button onClick={() => setStep(step + 1)}>{nextStep ? nextStep : 'Next'}</Button>
 
       <RenderIf value={step !== 1}>
-        <Button onClick={() => setStep(step - 1)}>Back</Button>
+        <Button onClick={() => setStep(step - 1)} secondary>
+          Back
+        </Button>
       </RenderIf>
     </div>
   );

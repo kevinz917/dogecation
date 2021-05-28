@@ -28,7 +28,12 @@
 }
 
 .button-secondary {
-  color: $secondary !important;
+  color: $grey100;
+  background-color: $grey700;
+}
+
+.button-secondary:hover {
+  background-color: $grey600;
 }
 
 .button-disabled {
