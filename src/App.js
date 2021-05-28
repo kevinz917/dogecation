@@ -1,6 +1,7 @@
 import { Router, Route, Switch } from 'react-router-dom';
 import PageLoadingBar from './common/components/PageLoadingBar/PageLoadingBar';
 import Test from './modules/test/test';
+import Course from './modules/course/course';
 
 import './common/styles/colors.scss';
 import './common/styles/typography.scss';
@@ -13,6 +14,7 @@ const App = () => {
       <PageLoadingBar />
       <Router history={history}>
         <Switch>
+          <Route exact path="/" component={Course} />
           <Route exact path="/test" component={Test} />
         </Switch>
       </Router>

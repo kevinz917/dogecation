@@ -1,0 +1,23 @@
+@import "../../common/styles/colors.scss";
+
+.course-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background-color: $grey800;
+  padding: 24px;
+
+  .left-container {
+    width: 50%;
+    background-color: $grey700;
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .right-container {
+    width: 50%;
+    background-color: $grey800;
+    border-radius: 12px;
+  }
+}
