@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import './NFTDataDisplay.scss';
 
 const mapStateToProps = (state) => {
   return {
@@ -7,7 +8,8 @@ const mapStateToProps = (state) => {
 };
 
 const NFTDataDisplay = (props) => {
-  const { nft } = props;
+  const { nft, highlight } = props;
+
   return (
     <div>
       <hr />
@@ -15,7 +17,18 @@ const NFTDataDisplay = (props) => {
       <div className="body2">This data will be stored on IPFS</div>
       <br />
       <div className="body2">
-        <pre>{JSON.stringify(nft, null, 2)}</pre>
+        <div>{'{'}</div>
+        {Object.keys(nft).map((key, idx) => (
+          <div
+            className={`body2 key-object-line-container ${
+              highlight && highlight.includes(key) ? 'highlight' : 'no-highlight'
+            }`}
+            key={`${key} ${idx} }`}
+          >
+            {key} : {nft[key]}
+          </div>
+        ))}
+        <div>{'}'}</div>
       </div>
     </div>
   );

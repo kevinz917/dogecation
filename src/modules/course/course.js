@@ -5,6 +5,7 @@ import RenderIf from 'common/components/RenderIf/RenderIf';
 import WelcomePage from './welcomePage/WelcomePage';
 import Page2 from './Page2/Page2';
 import Page3 from './Page3/Page3';
+import Page4 from './Page4/Page4';
 
 const mapStateToProps = (state) => {
   return {
@@ -27,6 +28,10 @@ const Course = (props) => {
 
       <RenderIf value={step == 3}>
         <Page3 />
+      </RenderIf>
+
+      <RenderIf value={step == 4}>
+        <Page4 />
       </RenderIf>
     </div>
   );

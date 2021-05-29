@@ -1,0 +1,16 @@
+@import "../../../common/styles/colors.scss";
+
+.key-object-line-container {
+  margin: 0 0 0 36px;
+}
+
+.no-highlight {
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.highlight {
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: $grey600;
+}

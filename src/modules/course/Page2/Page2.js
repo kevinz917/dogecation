@@ -62,7 +62,7 @@ const Page2 = (props) => {
           <img src={Doge} className="doge-hero" />
         </div>
 
-        <NFTDataDisplay />
+        <NFTDataDisplay highlight={['name', 'description']} />
       </div>
     </React.Fragment>
   );

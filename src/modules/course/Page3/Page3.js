@@ -29,6 +29,7 @@ const Page3 = (props) => {
     <React.Fragment>
       <div className="left-container">
         <div className="header1">Customize NFT</div>
+        <br />
 
         <div className="body2">
           NFTs often have characteristics. For an artwork, it could be the image file and its size. For the NFT Doge,
@@ -43,6 +44,15 @@ const Page3 = (props) => {
         <div className="dna-generator-container">
           <Input value={nft.dna} />
           <Button onClick={() => generateDNA()}>Generate DNA</Button>
+        </div>
+
+        <Spacer size="large" />
+
+        <div className="header2">How are the hats determined?</div>
+        <br />
+        <div className="body2">
+          In this example, we will be using the last digit to determine the hat color. This is how a few other NFT games
+          implement randomization as well.
         </div>
 
         <Spacer size="xxlarge" />
@@ -62,7 +72,7 @@ const Page3 = (props) => {
 
           <img src={Doge} className="doge-hero" />
         </div>
-        <NFTDataDisplay />
+        <NFTDataDisplay highlight={['dna']} />
       </div>
     </React.Fragment>
   );
