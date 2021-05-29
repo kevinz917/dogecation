@@ -1,12 +1,10 @@
-# Kevin's Frontend Template 🧊
+# Dogecation
 
-- A comprehensive, flexible front end template for real scalable web apps. 
-- Hopefully use this for future startups 
+- Gamified ed-tech platform teaching web3 concepts with on-chain credentials.
 
-
-## Architecture
+## Stack
 
 - Typescript
 - Redux + Redux Saga for data flow
-- Redux selectors
 - SASS / CSS
+- Web3.js / Smart Contracts

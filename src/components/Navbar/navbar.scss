@@ -4,8 +4,25 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 24px;
+  padding: 6px 24px;
   background-color: $grey700;
-  margin: 32px 32px 0px 32px;
-  border-radius: 12px;
+  align-items: center;
+  min-height: 60px;
+}
+
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navlink {
+  margin-right: 24px;
+}
+
+.address-container {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }

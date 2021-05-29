@@ -15,7 +15,7 @@ const sagaMiddleware = createSagaMiddleware();
 const composeEnhancer =
   (PROD !== 'production' && typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
-const store = createStore(MasterReducer, composeEnhancer(applyMiddleware(sagaMiddleware)));
+export const store = createStore(MasterReducer, composeEnhancer(applyMiddleware(sagaMiddleware)));
 
 // run the saga // TODO
 sagaMiddleware.run(myTestSaga);
