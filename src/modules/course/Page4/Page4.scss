@@ -1,0 +1,27 @@
+.parent-doge {
+  width: 100px;
+  height: auto;
+  margin-top: 40px;
+}
+
+.hat {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  top: 50px;
+}
+
+.nft-parents-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.child-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

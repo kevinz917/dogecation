@@ -2,7 +2,7 @@ import { produce } from 'immer';
 import { COURSE_ACTIONS } from './courseActionCreator';
 
 const initialCourseState = {
-  step: 3,
+  step: 4,
   nft: {
     id: 12,
     name: '',

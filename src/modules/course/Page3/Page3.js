@@ -9,8 +9,8 @@ import courseActions from '../redux/courseActionCreator';
 import Doge from '../assets/doge.png';
 import Redhat from '../assets/redhat.png';
 import Orangehat from '../assets/orangehat.png';
-import './Page3.scss';
 import RenderIf from 'common/components/RenderIf/RenderIf';
+import './Page3.scss';
 
 const mapStateToProps = (state) => {
   return {
