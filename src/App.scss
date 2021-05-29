@@ -1,0 +1,9 @@
+@import "./common/styles/colors.scss";
+
+.main-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $grey800;
+}
