@@ -7,9 +7,15 @@
 }
 
 .badge {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   margin: 6px;
+  transition: 0.2s;
+}
+
+.badge:hover {
+  transition: 0.2s;
+  transform: scale(1.2);
 }
 
 .home-container {
@@ -37,5 +43,21 @@
     background-color: $grey600;
     padding: 32px;
     margin: 0 32px 32px 0;
+    transition: 0.2s;
   }
+
+  .course-card:hover {
+    transition: 0.2s;
+    transform: scale(1.02);
+  }
+}
+
+.tooltip-container {
+  // width: 600px;
+  // height: 150px;
+  // margin: 10px auto;
+  background: rgba(0, 0, 0, 0.1);
+  // border-radius: 5px;
+  // box-sizing: border-box;
+  // position: relative;
 }

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
 import { Link } from 'react-router-dom';
 import Doge from '../../modules/course/assets/doge.png';
 import Uniswap from './assets/uniswap.png';
 import axios from 'axios';
-import './Home.scss';
 import RenderIf from 'common/components/RenderIf/RenderIf';
 import Spacer from 'common/components/spacer/Spacer';
+import './Home.scss';
 
 const course1 = {
   title: 'What are NFTs',
@@ -63,14 +64,25 @@ const Home = () => {
   return (
     <div className="page-container">
       <div className="header2">My course badges </div>
+      <Spacer size="medium" />
       <RenderIf value={loading}>
         <div className="caption">Loading badges ...</div>
       </RenderIf>
       {badges.map((badge, idx) => (
-        <img src={badge.event.image_url} className="badge" />
+        <React.Fragment key={idx}>
+          <a data-tip data-for="happyFace">
+            <img src={badge.event.image_url} className="badge" key={idx} />
+          </a>
+          <ReactTooltip id="happyFace" type="dark" place="right">
+            <div className="tooltip-container">
+              <span>{badge.event.name}</span>
+            </div>
+          </ReactTooltip>
+        </React.Fragment>
       ))}
       <Spacer size="large" />
       <div className="header2">Courses</div>
+      <Spacer size="medium" />
       <div className="home-container">
         <CourseCard course={course1} />
         <CourseCard course={course2} />
