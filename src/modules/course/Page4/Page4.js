@@ -78,6 +78,8 @@ const Page4 = () => {
           </RenderIf>
 
           <RenderIf value={showChild}>
+            <img src={Orangehat} className="child-hat" />
+            <img src={Doge} className="parent-doge" />
             <JSONDisplay nft={childDogeData} />
           </RenderIf>
         </div>
